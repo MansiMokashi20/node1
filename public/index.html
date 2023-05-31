@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+    <form>
+    <label for="username">Name : </label>
+    <input type="text" name="username" id="name" placeholder="Enter your name"><br><br>
+
+    <label for="email">Email : </label>
+    <input type="email" name="email"  id="Email" placeholder="abc@gmail.com"><br><br>
+
+    <label for="Mobno">Mobile No. : </label>
+    <input type="number" name="Mobno" id="mobno"><br><br>
+
+    <label for="Address">Address</label>
+    <textarea id="addr" name="Address" required></textarea><br><br>
+
+    <label for="Station">Stationary List</label>
+    <textarea id="stationary" name="Station" cols="20" rows="4"></textarea><br><br>
+
+     <input type="button" class="btn btn-success" value="Submit" onclick="SaveformData()">
+    <input type="reset" class="btn btn-success" value="Reset">
+
+    </form>
+</div>
+
+<script>
+    function SaveformData(){
+        const formData={
+            username: document.getElementById("name").value,
+            email: document.getElementById("Email").value,
+            Mobno: document.getElementById("mobno").value,
+            Address: document.getElementById("addr").value,
+            Station: document.getElementById("stationary").value,
+          
+        };
+        localStorage.setItem("formData",JSON.stringify(formData));
+        window.location.href="display.html";
+    }
+</script>
+
+
+</body>
+</html>
